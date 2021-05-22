@@ -1,9 +1,11 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
+#activate :autoprefixer do |prefix|
+#  prefix.browsers = "last 2 versions"
+#end
+
+set :slim, tabsize: 2
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/
@@ -40,7 +42,10 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
+configure :build do
+   activate :minify_css
+   activate :minify_javascript
+end
+
+# For github pages
+set :build_dir, 'docs'
